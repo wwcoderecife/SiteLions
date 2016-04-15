@@ -1,29 +1,18 @@
 <?php
 	require_once 'config/conexao.class.php';
+ 	
+ 	//esse bloco de código em php verifica se existe a sessão
+	session_start(); 
+	if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)) {
+	 unset($_SESSION['login']); unset($_SESSION['senha']); header('location:index.html'); 
+	}
 
-	//Pega o ID do usuário via GET
-	$id = $_GET['id'];
+	$logado = $_SESSION['login'];
 
 	$con = new conexao(); // instancia classe de conxao
     $con->connect(); // abre conexao com o banco
 
-	//Busca os dados do usuário logado
-	$consulta = mysql_query("SELECT * FROM tb_usuarios WHERE id = $id");
-
-	if($consulta){
-   	 $usuario = mysql_fetch_array($consulta);
-   	 if($usuario){
-   	 	$nome = $usuario['nome'];
-   	 }else{
-   	 	$con->disconnect();
-   	 	echo "<script type='text/javascript'> alert('Não foi possível buscar os dados do usuário'); 
-   	 	window.location = '../index.html#restrito'; </script>";
-   	 }
-   }else{
-   	$con->disconnect();
-   	echo "<script type='text/javascript'> alert('Não foi possível logar no sistema!'); 
-   	window.location = '../index.html#restrito'; </script>";
-   }
+	
 
 ?>
 <!DOCTYPE html>
@@ -41,6 +30,7 @@
 		<link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />	
 		<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.css">
 		<link href="css/responsive-slider.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/animate.css">
@@ -49,30 +39,47 @@
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<!-- skin -->
 		<link rel="stylesheet" href="skin/default.css">
+		<script type="text/javascript">
+			function print_specific_div_content(div, titulo){
+			    var win = window.open('','','left=0,top=0,width=552,height=477,toolbar=0,scrollbars=1,status =0');
+
+			    var content = "<html><link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>";
+			    content += "<body onload=\"window.print(); window.close();\">";
+			    content += "<h1>"+titulo+"</h1>";
+			    content += document.getElementById(div).innerHTML ;
+			    content += "<span>Women Who Code - Recife</span>"
+			    content += "</body>";
+			    content += "</html>";
+			    win.document.write(content);
+			    win.document.close();
+			}
+
+		</script>
+
     </head>
 	 
     <body>
 	
 	
 	<div class="header">
-	<section id="header" class="appear">
+	<section id="header">
 		
-		<div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+		<div class="navbar navbar-fixed-top" role="navigation" style="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
 			
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="fa fa-bars color-white"></span>
 					</button>
-					<h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">GREEN
+					<h1><a class="navbar-brand" href="index.html" style="line-height:50px;">GREEN
 					</a></h1>
 				</div>
 				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+					<ul class="nav navbar-nav" style="margin-top:5px;" >
 						<li class="active"><a href="#cadastrados">Cadastrados</a></li>
 						<li><a href="#section-about">Top 5 Idosos/Jovens</a></li>
 						<li><a href="#team">Delegados/Delegados Natos</a></li>
 						<li><a href="#section-contact">Totalizador</a></li>
-						<li><a href="#" class="usuario"><?php echo $nome ?></a></li>	
+						<li><a href="login/logout.php" class="usuario" title="Sair">Sair</a></li>	
 					</ul>
 				</div><!--/.navbar-collapse -->
 			</div>
@@ -86,7 +93,7 @@
 	<section id="cadastrados">
 		<div class="container">
 			<div class="about">
-				<div class="row mar-bot40">
+				<div class="row">
 					<div class="col-md-offset-3 col-md-6">
 						<div class="title">
 							<div class="wow bounceIn">
@@ -96,7 +103,96 @@
 					</div>
 				</div>
 				<div class="row">
-					
+					<?php
+						$busca = ("SELECT * FROM tb_membros order by nome");
+						$total_reg = "10";
+
+						
+						$pagina = $_GET['pagina'];  
+						$pc = $pagina; 
+						
+
+						$inicio = $pc - 1; 
+						$inicio = $inicio * $total_reg;
+
+
+        				$limite = mysql_query("$busca LIMIT $inicio,$total_reg"); 
+        				$todos = mysql_query("$busca"); 
+        				$tr = mysql_num_rows($todos); // verifica o número total de registros 
+        				$tp = ceil($tr / $total_reg); // verifica o número total de páginas
+
+        				echo "
+        				<button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+				          <span class='glyphicon glyphicon-print'></span> Imprimir
+				        </button>
+				        <div class='table-responsive'>
+        				<table class='table table-condensed table-hover'>
+        					<thead>
+						      <tr>
+						        <th>Nome</th>
+						        <th>Clube</th>
+						        <th>Distrito</th>
+						      </tr>
+						    </thead>
+						    <tbody>";
+        				// vamos criar a visualização 
+        				while ($dados = mysql_fetch_array($limite)) { 
+        				 echo "<tr>
+						        <td>".$dados["nome"]."</td>
+						        <td>".$dados["nome_clube"]."</td>
+						        <td>".$dados["distrito"]."</td>
+						      </tr>";
+        				} 
+        				echo "</tbody>
+  							</table>
+  							</div>";
+        				// agora vamos criar os botões "Anterior e próximo" 
+        				$anterior = $pc -1; 
+        				$proximo = $pc +1; 
+
+        				echo "<nav><ul class='pagination'>
+							   <li>
+							  <a href='?pagina=1' aria-label='Previous'>
+							    <span aria-hidden='true'>&laquo;</span>
+							  </a>
+							</li>";
+        				for($i = 1; $i < $tp + 1; $i++) {
+						     echo "<li><a href='?pagina=$i''>$i</a></li>";
+						}
+
+						echo "<li>
+						      <a href='?pagina=$tp' aria-label='Next'>
+						        <span aria-hidden='true'>&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>";
+
+
+					//Criar a tabela para impressão
+					echo "<div class='table-responsive' id='print' style='display:none;'>
+        				<table class='table table-condensed table-hover'>
+        					<thead>
+						      <tr>
+						        <th>Nome</th>
+						        <th>Clube</th>
+						        <th>Distrito</th>
+						      </tr>
+						    </thead>
+						    <tbody>";
+        				// vamos criar a visualização 
+        				while ($dados = mysql_fetch_array($todos)) { 
+        				 echo "<tr>
+						        <td>".$dados["nome"]."</td>
+						        <td>".$dados["nome_clube"]."</td>
+						        <td>".$dados["distrito"]."</td>
+						      </tr>";
+        				} 
+        				echo "</tbody>
+  							</table>
+  							</div>";
+
+					?>
 				</div>
 					
 			</div>
@@ -114,7 +210,7 @@
 						<div class="title">
 							<div class="wow bounceIn">
 						
-							<h2 class="section-heading animated" data-animation="bounceInUp">Sobre a Convençāo</h2>
+							<h2 class="section-heading animated" data-animation="bounceInUp">Top 5 Idosos/Jovens</h2>
 							
 						
 							</div>
@@ -122,56 +218,98 @@
 					</div>
 				</div>
 				<div class="row">
-			
-					<div class="row-slider">
-						<div class="col-lg-6 mar-bot30">
-							<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
-								<div class="slides" data-group="slides">
-									<ul>
-  	    		
-										<div class="slide-body" data-group="slide">
-											<li><img alt="" class="img-responsive" src="img/9.jpg" width="100%" height="350"/></li>
-											<li><img alt="" class="img-responsive" src="img/10.jpg" width="100%" height="350"/></li>
-											<li><img alt="" class="img-responsive" src="img/11.jpg" width="100%" height="350"/></li>
-							
-										</div>
-									</ul>
-										<a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-angle-left fa-2x"></i></a>
-										<a class="slider-control right" href="#" data-jump="next"><i class="fa fa-angle-right fa-2x"></i></a>
-								
-								</div>
-							</div>
-						</div>
-					
-						<div class="col-lg-6 ">
-							<div class="company mar-left10">
-								<h4>Our Company has created 1928 morbi leo risus, porta ac consectetur ac, <span>vestibulum </span> at eros.</h4>
-								<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Fusce dapibus, tellus ac cursus etiam porta sem malesuada magna mollis euismod. commodo, Faccibus mollis interdum. Morbi leo risus, porta ac, vestibulum at eros.
-								  Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Fusce dapibus, tellus ac.</p>
-							</div>
-							<div class="list-style">
-								<div class="row">
-									<div class="col-lg-6 col-sm-6 col-xs-12">
-										<ul>
-											<li>Sollicitudin Vestibulum</li>
-											<li>Fermentum Pellentesque</li>
-											<li>Sollicitudin Vestibulum</li>
-											<li>Nullam id dolor id nibh</li>
-										</ul>
-									</div>
-									<div class="col-lg-6 col-sm-6 col-xs-12">
-										<ul>
-											<li>Sollicitudin Vestibulum</li>
-											<li>Fermentum Pellentesque</li>
-											<li>Sollicitudin Vestibulum</li>
-											<li>Nullam id dolor id nibh</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					
-					</div>	
+					<?php
+						$busca = ("SELECT * FROM tb_membros order by nome");
+						$total_reg = "10";
+
+						
+						$pagina = $_GET['pagina'];  
+						$pc = $pagina; 
+						
+
+						$inicio = $pc - 1; 
+						$inicio = $inicio * $total_reg;
+
+
+        				$limite = mysql_query("$busca LIMIT $inicio,$total_reg"); 
+        				$todos = mysql_query("$busca"); 
+        				$tr = mysql_num_rows($todos); // verifica o número total de registros 
+        				$tp = ceil($tr / $total_reg); // verifica o número total de páginas
+
+        				echo "
+        				<button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+				          <span class='glyphicon glyphicon-print'></span> Imprimir
+				        </button>
+				        <div class='table-responsive'>
+        				<table class='table table-condensed table-hover'>
+        					<thead>
+						      <tr>
+						        <th>Nome</th>
+						        <th>Clube</th>
+						        <th>Distrito</th>
+						        <th>Data Nascimento</th>
+						      </tr>
+						    </thead>
+						    <tbody>";
+        				// vamos criar a visualização 
+        				while ($dados = mysql_fetch_array($limite)) { 
+        				 echo "<tr>
+						        <td>".$dados["nome"]."</td>
+						        <td>".$dados["nome_clube"]."</td>
+						        <td>".$dados["distrito"]."</td>
+						        <td>".$dados["data_nascimento"]."</td>
+						      </tr>";
+        				} 
+        				echo "</tbody>
+  							</table>
+  							</div>";
+        				// agora vamos criar os botões "Anterior e próximo" 
+        				$anterior = $pc -1; 
+        				$proximo = $pc +1; 
+
+        				echo "<nav><ul class='pagination'>
+							   <li>
+							  <a href='?pagina=1' aria-label='Previous'>
+							    <span aria-hidden='true'>&laquo;</span>
+							  </a>
+							</li>";
+        				for($i = 1; $i < $tp + 1; $i++) {
+						     echo "<li><a href='?pagina=$i''>$i</a></li>";
+						}
+
+						echo "<li>
+						      <a href='?pagina=$tp' aria-label='Next'>
+						        <span aria-hidden='true'>&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>";
+
+
+					//Criar a tabela para impressão
+					echo "<div class='table-responsive' id='print' style='display:none;'>
+        				<table class='table table-condensed table-hover'>
+        					<thead>
+						      <tr>
+						        <th>Nome</th>
+						        <th>Clube</th>
+						        <th>Distrito</th>
+						      </tr>
+						    </thead>
+						    <tbody>";
+        				// vamos criar a visualização 
+        				while ($dados = mysql_fetch_array($todos)) { 
+        				 echo "<tr>
+						        <td>".$dados["nome"]."</td>
+						        <td>".$dados["nome_clube"]."</td>
+						        <td>".$dados["distrito"]."</td>
+						      </tr>";
+        				} 
+        				echo "</tbody>
+  							</table>
+  							</div>";
+
+					?>
 				</div>
 					
 			</div>
@@ -793,10 +931,7 @@
 				
 			</div>
 		</section>
-		<!-- map -->
-		<section id="section-map" class="clearfix">
-			<div id="map"></div>
-		</section>
+		
 		
 	<section id="footer" class="section footer">
 		<div class="container">
@@ -829,7 +964,6 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.easing.1.3.js"></script>
     <script src="js/bootstrap.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
 	<script src="js/jquery.isotope.min.js"></script>
 	<script src="js/jquery.nicescroll.min.js"></script>
 	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
@@ -843,40 +977,7 @@
 	<script src="js/validate.js"></script>
 	<script src="js/grid.js"></script>
     <script src="js/main.js"></script>
-        <script type="text/javascript">
-            // When the window has finished loading create our google map below
-            google.maps.event.addDomListener(window, 'load', init);
-        
-            function init() {
-                // Basic options for a simple Google Map
-                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-                var mapOptions = {
-                    // How zoomed in you want the map to start at (always required)
-                    zoom: 11,
-
-                    // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(40.6700, -73.9400), // New York
-
-                    // How you would like to style the map. 
-                    // This is where you would paste any style found on Snazzy Maps.
-                    styles: [	{		featureType:"all",		elementType:"all",		stylers:[		{			invert_lightness:true		},		{			saturation:10		},		{			lightness:30		},		{			gamma:0.5		},		{			hue:"#1C705B"		}		]	}	]
-                };
-
-                // Get the HTML DOM element that will contain your map 
-                // We are using a div with id="map" seen below in the <body>
-                var mapElement = document.getElementById('map');
-
-                // Create the Google Map using out element and options defined above
-                var map = new google.maps.Map(mapElement, mapOptions);
-            }
-        </script>
-		 <script src="js/wow.min.js"></script>
-	 <script>
-	 wow = new WOW(
-	 {
-	
-		}	) 
-		.init();
-	</script>
+       
+		
 	</body>
 </html>
