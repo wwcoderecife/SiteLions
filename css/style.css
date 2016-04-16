@@ -737,7 +737,7 @@ height: auto;
 }
 
 .nav>li>a:hover {
-	color: #ffffff;
+	color: #fff;
 	background: none;
 }
 
@@ -748,7 +748,7 @@ height: auto;
 }
 
 .navbar .navbar-nav > .active > a {
-	color: #004182;
+	color: #fff;
 }
 .navbar .navbar-nav > .active > a {
 	padding-bottom: 15px;
@@ -756,7 +756,7 @@ height: auto;
 
 h1 a.navbar-brand {
 	font-size: 24px;
-	color: #004182;
+	color: #fff;
 	font-weight: 300;
 	text-shadow: none;
 	margin-left: 40px;
