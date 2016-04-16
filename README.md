@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 # projetolions
 =======
@@ -72,5 +72,5 @@ Autores: Karina Machado, Veridiane Melo, Luciana Cunha,Simone Amorim, Maria Clar
 
    
 
-=======
+
 origin/master
