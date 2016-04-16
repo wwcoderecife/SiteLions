@@ -70,8 +70,7 @@ Tecnologia Back-End: PHP, MYSQL.
 
 Autores: Karina Machado, Veridiane Melo, Luciana Cunha,Simone Amorim, Maria Clara Ferraz, Isabela Isis e Willany Silva.
 
-    
-<<<<<<< HEAD
+   
 
 =======
->>>>>>> origin/master
+origin/master
