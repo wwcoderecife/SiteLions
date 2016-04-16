@@ -13,7 +13,7 @@
 body {
 	 font-family: "Titillium Web", Helvetica, Arial, sans-serif;
 	color:#777;
-	background: #f7f7f7;
+	background: #fff;
 	font-size: 16px;
 	line-height: 1.6em;
 	font-weight: 300;
@@ -1821,5 +1821,4 @@ Media queries
 
 .usuario{
   color: yellow !important;
-  cursor: default !important;
 }

@@ -33,6 +33,8 @@
     $con = new conexao(); // instancia classe de conxao
     $con->connect(); // abre conexao com o banco
 
+    // session_start inicia a sessão
+    session_start();
 
     //Pega os valores do formulário de cadastro através do atributo NAME
     $login = $_POST['login'];  
@@ -43,8 +45,13 @@
    
    if($consulta){
    	 $usuario = mysql_fetch_array($consulta);
-   	 echo "<script type='text/javascript'>window.location = '../relatorios.php?id=$usuario[id]'; </script>";
+     $_SESSION['login'] = $login;
+     $_SESSION['senha'] = $senha;
+     header('location:../relatorios.php?pagina=1');
+   	 //echo "<script type='text/javascript'>window.location = '../relatorios.php?id=$usuario[id]'; </script>";
    }else{
+    unset ($_SESSION['login']);
+    unset ($_SESSION['senha']);
    	echo "<script type='text/javascript'> alert('Login ou senha inválidos!'); 
    	 	window.location = '../index.html#restrito'; </script>";
    }
