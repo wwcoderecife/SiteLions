@@ -22,7 +22,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
 		<!-- BASICS -->
-        <meta charset="utf-8">
+        <meta charset="ISO-9000">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>GREEN responsive bootstraap template</title>
         <meta name="description" content="">
@@ -122,7 +122,7 @@
         				$tp = ceil($tr / $total_reg); // verifica o número total de páginas
 
         				echo "
-        				<button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+        				<button type='button' onclick='print_specific_div_content(\"printCadastrados\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
 				          <span class='glyphicon glyphicon-print'></span> Imprimir
 				        </button>
 				        <div class='table-responsive'>
@@ -170,7 +170,7 @@
 
 
 					//Criar a tabela para impressão
-					echo "<div class='table-responsive' id='print' style='display:none;'>
+					echo "<div class='table-responsive' id='printCadastrados' style='display:none;'>
         				<table class='table table-condensed table-hover'>
         					<thead>
 						      <tr>
@@ -219,29 +219,18 @@
 				</div>
 				<div class="row">
 					<?php
-						$busca = ("SELECT * FROM tb_membros order by nome");
-						$total_reg = "10";
-
-						
-						$pagina = $_GET['pagina'];  
-						$pc = $pagina; 
-						
-
-						$inicio = $pc - 1; 
-						$inicio = $inicio * $total_reg;
-
-
-        				$limite = mysql_query("$busca LIMIT $inicio,$total_reg"); 
-        				$todos = mysql_query("$busca"); 
-        				$tr = mysql_num_rows($todos); // verifica o número total de registros 
-        				$tp = ceil($tr / $total_reg); // verifica o número total de páginas
-
+						$topVelhos = mysql_query("SELECT * FROM tb_membros order by data_nascimento asc LIMIT 0, 5");
+						$topNovos = mysql_query("SELECT * FROM tb_membros order by data_nascimento desc LIMIT 0, 5");
+									
         				echo "
-        				<button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+        				<button type='button' onclick='print_specific_div_content(\"printTopIdososJovens\",\"Top Idoso/Jovens\")' class='btn btn-default btn-sm' style='float: right'>
 				          <span class='glyphicon glyphicon-print'></span> Imprimir
 				        </button>
-				        <div class='table-responsive'>
+				        <div class='table-responsive' id='printTopIdososJovens'>
         				<table class='table table-condensed table-hover'>
+        					<thead>
+						      <th>Idosos</th>
+						    </thead>
         					<thead>
 						      <tr>
 						        <th>Nome</th>
@@ -252,7 +241,7 @@
 						    </thead>
 						    <tbody>";
         				// vamos criar a visualização 
-        				while ($dados = mysql_fetch_array($limite)) { 
+        				while ($dados = mysql_fetch_array($topVelhos)) { 
         				 echo "<tr>
 						        <td>".$dados["nome"]."</td>
 						        <td>".$dados["nome_clube"]."</td>
@@ -260,31 +249,33 @@
 						        <td>".$dados["data_nascimento"]."</td>
 						      </tr>";
         				} 
+        				echo "
+        				<thead>
+						      <th>Jovens</th>
+						    </thead>
+        					<thead>
+						      <tr>
+						        <th>Nome</th>
+						        <th>Clube</th>
+						        <th>Distrito</th>
+						        <th>Data Nascimento</th>
+						      </tr>
+						    </thead>
+						    ";
+  						// vamos criar a visualização 
+        				while ($dados = mysql_fetch_array($topNovos)) { 
+        				 echo "<tr>
+						        <td>".$dados["nome"]."</td>
+						        <td>".$dados["nome_clube"]."</td>
+						        <td>".$dados["distrito"]."</td>
+						        <td>".$dados["data_nascimento"]."</td>
+						      </tr>";
+        				}; 
+
         				echo "</tbody>
   							</table>
   							</div>";
-        				// agora vamos criar os botões "Anterior e próximo" 
-        				$anterior = $pc -1; 
-        				$proximo = $pc +1; 
-
-        				echo "<nav><ul class='pagination'>
-							   <li>
-							  <a href='?pagina=1' aria-label='Previous'>
-							    <span aria-hidden='true'>&laquo;</span>
-							  </a>
-							</li>";
-        				for($i = 1; $i < $tp + 1; $i++) {
-						     echo "<li><a href='?pagina=$i''>$i</a></li>";
-						}
-
-						echo "<li>
-						      <a href='?pagina=$tp' aria-label='Next'>
-						        <span aria-hidden='true'>&raquo;</span>
-						      </a>
-						    </li>
-						  </ul>
-						</nav>";
-
+        				
 
 					//Criar a tabela para impressão
 					echo "<div class='table-responsive' id='print' style='display:none;'>
@@ -844,44 +835,29 @@
 				<div class="row mar-bot40">
 					<div class="col-md-offset-3 col-md-6">
 						<div class="section-header">
-							<h2 class="section-heading animated" data-animation="bounceInUp">Contact us</h2>
-							<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam.</p>
+							<h2 class="section-heading animated" data-animation="bounceInUp">Totalizador</h2>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
-						<div class="cform" id="contact-form">
-							<div id="sendmessage">
-								 Your message has been sent. Thank you!
-							</div>
-							<form action="contact/contact.php" method="post" role="form" class="contactForm">
-							<div class="wow bounceIn">
-							  <div class="form-group">
-								<label for="name">Your Name</label>
-								<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="maxlen:4" data-msg="Please enter at least 4 chars" />
-								<div class="validation"></div>
-							  </div>
-							  <div class="form-group">
-								<label for="email">Your Email</label>
-								<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-								<div class="validation"></div>
-							  </div>
-							  <div class="form-group">
-								<label for="subject">Subject</label>
-								<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="maxlen:4" data-msg="Please enter at least 8 chars of subject" />
-								<div class="validation"></div>
-							  </div>
-							  <div class="form-group">
-								<label for="message">Message</label>
-								<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
-								<div class="validation"></div>
-							  </div>
-							</div>
-							  <button type="submit" class="line-btn green">SEND MESSAGE</button>
-							</form>
-
-						</div>
+						<h4>Total geral de inscritos</h4>
+						<p> 
+							<?php $total = mysql_query("select * from tb_membros");
+							$tr = mysql_num_rows($total); 
+							echo $tr; ?>
+						</p>
+						<h4>Total de inscritos por clube</h4>
+						<?php
+							$clubes = mysql_query("select distinct nome_clube from tb_membros");
+							while ($dados = mysql_fetch_object($clubes)) {
+						
+								$consulta = mysql_query("select * from tb_membros where nome_clube = '$dados->nome_clube'");
+								$qtde_clube = mysql_num_rows($consulta);
+								echo "<p>".$dados->nome_clube.": ".$qtde_clube."</p>";
+	        				
+	        				} 
+						?>
 					</div>
 					<!-- ./span12 -->
 				</div>
