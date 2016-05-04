@@ -47,7 +47,7 @@
    	 $usuario = mysql_fetch_array($consulta);
      $_SESSION['login'] = $login;
      $_SESSION['senha'] = $senha;
-     header('location:../relatorios.php?pagina=1');
+     header('location:../relatorios.html?pagina=1');
    	 //echo "<script type='text/javascript'>window.location = '../relatorios.php?id=$usuario[id]'; </script>";
    }else{
     unset ($_SESSION['login']);
