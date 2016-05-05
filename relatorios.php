@@ -139,8 +139,8 @@
         				while ($dados = mysql_fetch_array($limite)) { 
         				 echo "<tr>
 						        <td>".$dados["nome"]."</td>
-						        <td>".$dados["nome_clube"]."</td>
-						        <td>".$dados["distrito"]."</td>
+						        <td>".$dados["nomeclube"]."</td>
+						        <td>".$dados["regiao"]."</td>
 						      </tr>";
         				} 
         				echo "</tbody>
@@ -255,9 +255,9 @@
         				while ($dados = mysql_fetch_array($limite)) { 
         				 echo "<tr>
 						        <td>".$dados["nome"]."</td>
-						        <td>".$dados["nome_clube"]."</td>
-						        <td>".$dados["distrito"]."</td>
-						        <td>".$dados["data_nascimento"]."</td>
+						        <td>".$dados["nomeclube"]."</td>
+						        <td>".$dados["regiao"]."</td>
+						        <td>".$dados["datanascimento"]."</td>
 						      </tr>";
         				} 
         				echo "</tbody>
