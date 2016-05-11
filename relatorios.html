@@ -12,7 +12,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />	
 		<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.css">
 		<link href="css/responsive-slider.css" rel="stylesheet">
@@ -22,22 +21,6 @@
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<!-- skin -->
 		<link rel="stylesheet" href="skin/default.css">
-    <script type="text/javascript">
-      function print_specific_div_content(div, titulo){
-          var win = window.open('','','left=0,top=0,width=552,height=477,toolbar=0,scrollbars=1,status =0');
-
-          var content = "<html><link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>";
-          content += "<body onload=\"window.print(); window.close();\">";
-          content += "<h1>"+titulo+"</h1>";
-          content += document.getElementById(div).innerHTML ;
-          content += "<span>Women Who Code - Recife</span>"
-          content += "</body>";
-          content += "</html>";
-          win.document.write(content);
-          win.document.close();
-      }
-
-    </script>
     </head>
 	 
     <body>
@@ -135,11 +118,7 @@
 					</div>
 				</div>
 
-
-				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
 	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
@@ -150,118 +129,75 @@
     </div>
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-
-        <a  id="cadastrados" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          
         <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
         <div class="portfolio-hover">
           Todos os Inscritos <!--Nome / Clube / Distrito, Em ordem alfabética. -->
         </div>
-
        </a>
       </div>
 
       <div class="panel-body">
-
-        <a data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
         <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-        <div class="portfolio-hover">
          Inscritos por Distrito x Clube
-        </div>
        </a>
       </div>
 
       <div class="panel-body">
-
-        <a data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
         <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-        <div class="portfolio-hover">
-         Top 5 Idosos/Jovens
-         <!-- constando nome e a data do nascimento. Na ordem decrescente, ou seja, o mais velho primeiro. Com nome do Clube e Distrito-->
-         <!-- constando nome e a data do nascimento. Na ordem crescente, ou seja, o mais novo primeiro. Com nome do Clube e Distrito.-->
-        </div>
+         Top Cinco Older <!-- constando nome e a data do nascimento. Na ordem decrescente, ou seja, o mais velho primeiro. Com nome do Clube e Distrito-->
        </a>
       </div>
 
       <div class="panel-body">
+        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+         Top Cinco Young <!-- constando nome e a data do nascimento. Na ordem crescente, ou seja, o mais novo primeiro. Com nome do Clube e Distrito.-->
+       </a>
+      </div>
 
-        <a data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
+      <div class="panel-body">
         <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-        <div class="portfolio-hover">
          Estatísticas <!--Total de inscritos / Total por Clubes / Total por Distrito / Total de LEOS -->
-        </div>
        </a>
       </div>
 
       <div class="panel-body">
-
-        <a data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
         <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-
          Top Cinco Club <!--Dos cinco Clubes com maior número de inscritos (CL/CaL/Dom/Leo) -->
        </a>
       </div>
 
       <div class="panel-body">
-
-        <a data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
         <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
-
          Delegados Natos <!-- Com Nome / Clube / Distrito dos Delegados Natos. Na ordem alfabética. Será documento do Comitê de Credenciais a ser passado para o Comitê de Eleições. -->
        </a>
       </div>
 
      <div class="panel-body">
-
-        <a data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
         <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
-
-         Comitê Credenciais Delegados Natos <!--Nome / Clube / Distrito dos Delegados Natos. Na ordem alfabética. Será documento do Comitê de Credenciais a ser passado para o Comitê de Eleições.-->
+         Comitê Credenciais Delegados Natos <!--Nome / Clube / Distrito dos Delegados Natos. sNa ordem alfabética. Será documento do Comitê de Credenciais a ser passado para o Comitê de Eleições.-->
        </a>
       </div>
 
      <div class="panel-body">
-
-        <a data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
         <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
-
          Comitê Credenciais Delegados <!--Comitê de Eleições.Nome / Clube / Distrito dos Delegados. Uma relação para cada Clube. Nomes na ordem alfabética. Será documento do Comitê de Credenciais a ser passado para o Comitê de Eleições.-->
        </a>
       </div>
 
      <div class="panel-body">
-
-        <a data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
         <a href="#portfolioModal10" class="portfolio-link" data-toggle="modal">
-
          Suplentes <!--Nome / Clube / Distrito dos Suplentes. Uma relação para cada Clube. Nomes na ordem alfabética. Estes dados podem ficar abaixo, com bom espaço, da relação dos Delegados.-->
        </a>
       </div>
 
      <div class="panel-body">
-
-        <a data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
         <a href="#portfolioModal11" class="portfolio-link" data-toggle="modal">
-
           Folha de Votação / Delegados Natos <!--Nome / Clube / Distrito dos Delegados Natos. Na ordem alfabética. Espaço duplo entre os nomes e campo para colher assinatura, com tracejado. Será usado pelo Comitê de Eleições como Folha de Votação.-->
        </a>
       </div>
 
      <div class="panel-body">
-
-        <a data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
         <a href="#portfolioModal12" class="portfolio-link" data-toggle="modal">
-
          Folha de Votação / Delegados <!--Nome / Clube / Distrito dos Delegados Uma relação para cada Clube. Nomes na ordem alfabética. Espaço duplo entre os nomes e campo para colher assinatura, com tracejado. Será usado pelo Comitê de Eleições como Folha de Votação.-->
        </a>
       </div>
@@ -354,8 +290,6 @@
 		.init();
 	</script>
 
-
-
      <!-- Relatório Modals -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
 
@@ -374,7 +308,27 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Todos os Inscritos</h2>
-                            <?php include 'relatorios/cadastrados.php'; ?>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -398,7 +352,27 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Inscritos por Distrito x Clube</h2>
-                            <?php include 'relatorios/distrito_clube.php'; ?>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -421,8 +395,72 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
-                            <h2>Top 5 Idosos/Jovens</h2>
-                            <?php include 'relatorios/top_five_idosos_jovens.php'; ?>
+                            <h2>Top Cinco Older</h2>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Relatório Modal 4 / Top Cinco Young -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Relatório Details Go Here -->
+                            <h2>Top Cinco Young</h2>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -446,7 +484,27 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Estatísticas</h2>
-                            <?php include 'relatorios/estatistica.php'; ?>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -470,7 +528,27 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Top Cinco Club</h2>
-                            <?php include 'relatorios/top_five_club.php'; ?>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -494,7 +572,27 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Delegados Natos</h2>
-                            <?php include 'relatorios/delegados_natos.php'; ?>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -518,7 +616,27 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Comitê Credenciais Delegados Natos</h2>
-                            <?php include 'relatorios/credenciais_delegados_natos.php'; ?>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -542,7 +660,27 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Comitê Credenciais Delegados</h2>
-                            <?php include 'relatorios/credenciais_delegados.php'; ?>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -566,7 +704,27 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Suplentes</h2>
-                            <?php include 'relatorios/suplentes.php'; ?>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -590,7 +748,27 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Folha de Votação / Delegados Natos</h2>
-                            <?php include 'relatorios/folha_votacao_delegados_natos.php'; ?>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -614,7 +792,27 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Folha de Votação / Delegados</h2>
-                            <?php include 'relatorios/folha_votacao_delegados.php'; ?>
+                            <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
+                              <span class='glyphicon glyphicon-print'></span> Imprimir
+                            </button>
+                            <div class='table-responsive'>
+                            <table class='table table-condensed table-hover'>
+                              <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Clube</th>
+                                <th>Distrito</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
@@ -641,6 +839,5 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
-
 	</body>
 </html>

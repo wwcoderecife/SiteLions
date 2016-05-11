@@ -3,10 +3,11 @@
     require_once 'config/crud.class.php';
 
     $con = new conexao(); // instancia classe de conxao
+    
     $con->connect(); // abre conexao com o banco
 
-
     //Pega os valores do formulário de cadastro - Dados do Clube
+
     $nome = $_POST['nome'];  
     $nomeconjugue = $_POST['nomeconjugue'];  
     $naturalidade = $_POST['naturalidade'];  
@@ -24,17 +25,24 @@
     $comissao = $_POST['comissao'];
     $ingressolions = $_POST['ingressolions'];
     $melvinjones = $_POST['melvinjones'];
-    $buttonenviar = $_POST['buttonenviar'];
 
     // instancia classe com as operaçoes crud, passando o nome da tabela como parametro
     $crud = new crud('tb_membros');  
 
-    // utiliza a funçao INSERIR da classe crud
+    $consultaNome = mysql_query("SELECT * FROM tb_membros WHERE nome = '$nome'");
+   
+    if(mysql_num_rows($consultaNome)> 0){
+        echo "<script type='text/javascript'> alert('Seu cadastro já foi realizado!'); 
+            window.location = 'index.html#form'; </script>";
+    }else{
+        // utiliza a funçao INSERIR da classe crud
     $crud->inserir("nome, nomeconjugue, naturalidade, estado, funcao, datanascimento, email, 
                     endereco, telefone, matricula, nomeclube, regiao, comissao, ingressolions, 
-                    melvinjones, buttonenviar", "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
+                    melvinjones", "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
                     '$funcao', '$datanascimento', '$email', '$endereco', '$telefone', '$matricula', 
-                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones', '$buttonenviar'"); 
+                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones'"); 
 
-    header("Location: index.php"); // redireciona para a listagem
+    echo "<script type='text/javascript'> alert('Cadastro realizado!');";
+    header("Location: index.html"); // redireciona para a listagem
+    }
 ?>
