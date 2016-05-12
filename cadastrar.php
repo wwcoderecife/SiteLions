@@ -3,17 +3,46 @@
     require_once 'config/crud.class.php';
 
     $con = new conexao(); // instancia classe de conxao
+    
     $con->connect(); // abre conexao com o banco
 
+    //Pega os valores do formulário de cadastro - Dados do Clube
 
-    //Pega os valores do formulário de cadastro através do atributo NAME
     $nome = $_POST['nome'];  
-    
+    $nomeconjugue = $_POST['nomeconjugue'];  
+    $naturalidade = $_POST['naturalidade'];  
+    $estado = $_POST['estado'];  
+    $funcao = $_POST['funcao'];  
+    $datanascimento = $_POST['datanascimento'];  
+    $email = $_POST['email'];
+    $endereco = $_POST['endereco'];
+    $telefone = $_POST['telefone'];
+
+    //Pega os valores do formulário de cadastro - Dados Pessoais
+    $matricula = $_POST['matricula'];
+    $nomeclube = $_POST['nomeclube'];
+    $regiao = $_POST['regiao'];
+    $comissao = $_POST['comissao'];
+    $ingressolions = $_POST['ingressolions'];
+    $melvinjones = $_POST['melvinjones'];
+
     // instancia classe com as operaçoes crud, passando o nome da tabela como parametro
     $crud = new crud('tb_membros');  
 
-    // utiliza a funçao INSERIR da classe crud
-    $crud->inserir("nome,descricao", "'$nome','$descricao'"); 
+    $consultaNome = mysql_query("SELECT * FROM tb_membros WHERE nome = '$nome'");
+   
+    if(mysql_num_rows($consultaNome)> 0){
+        echo "<script type='text/javascript'> alert('Seu cadastro já foi realizado!'); 
+            window.location = 'index.html#form'; </script>";
+    }else{
+        // utiliza a funçao INSERIR da classe crud
+    $crud->inserir("nome, nomeconjugue, naturalidade, estado, funcao, datanascimento, email, 
+                    endereco, telefone, matricula, nomeclube, regiao, comissao, ingressolions, 
+                    melvinjones", "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
+                    '$funcao', '$datanascimento', '$email', '$endereco', '$telefone', '$matricula', 
+                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones'"); 
 
-    header("Location: index.php"); // redireciona para a listagem
+    echo "<script type='text/javascript'> alert('Cadastro realizado!');";
+    header("Location: index.html"); // redireciona para a listagem
+    }
 ?>

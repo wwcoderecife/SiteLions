@@ -3,35 +3,35 @@
 #2 = 417630
 */
 a {
-	color: #417630;
+	color: #0000FF;
 }
 a:hover {
-	color: #417630;
+	color: #0000FF;
 }
 
 /* menu */
 .nav>li>a:hover {
-	color: #54ee23;
+	color: #191970;
 }
 
 .navbar .navbar-nav > .active > a {
-	color: #54ee23;
+	color: #191970;
 }
 .navbar .navbar-brand:hover {
-	color: #54ee23;
+	color: #191970;
 }
 
 /* flexslider */
 .flex-control-paging li a {
-	background: #417630;
+	background: #0000FF;
 }
 
 .flex-direction-nav a:hover{
-	background-color:#417630;
+	background-color:#0000FF;
 }
 
 .testimonial span.author a {
-	color: #417630;
+	color: #0000FF;
 }
 
 /* --- icon box hover --- */
@@ -73,9 +73,9 @@ a:hover {
 
 /* footer */
 .social-circle li a {
-	background:#417630;
+	background:rgba(255,209,15, 1.0);
 }
 
 a.scrollup{
-	background:#417630;
+	background:#1C4D86;
 }

@@ -1,1 +1,2 @@
 INSERT INTO `wwc_lions`.`tb_usuarios` (`id`, `nome`, `login`, `senha`) VALUES (NULL, 'willany da silva', 'willany', '1234');
+INSERT INTO `tb_usuarios` (`id`, `nome`, `login`, `senha`) VALUES (NULL, 'simone', 'simone', '1234');

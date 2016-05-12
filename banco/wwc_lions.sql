@@ -28,25 +28,26 @@ USE `wwc_lions`;
 -- Estrutura da tabela `tb_membros`
 --
 
+DROP TABLE IF EXISTS `tb_membros`;
 CREATE TABLE IF NOT EXISTS `tb_membros` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(40) NOT NULL,
-  `nome_conjuge` varchar(40) NOT NULL,
+  `nomeconjugue` varchar(40) NOT NULL,
   `naturalidade` varchar(40) NOT NULL,
   `funcao` varchar(40) NOT NULL,
   `estado` varchar(40) NOT NULL,
-  `data_nascimento` date NOT NULL,
+  `datanascimento` date NOT NULL,
   `endereco` varchar(40) NOT NULL,
-  `e-mail` varchar(40) NOT NULL,
+  `email` varchar(40) NOT NULL,
   `telefone` varchar(20) NOT NULL,
   `matricula` varchar(40) NOT NULL,
-  `nome_clube` varchar(40) NOT NULL,
-  `distrito` varchar(40) NOT NULL,
-  `delegado_suplente` tinyint(1) NOT NULL,
-  `nato` tinyint(1) NOT NULL,
-  `data_ingresso_lions` date NOT NULL,
-  `cl_melvin_jones` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nomeclube` varchar(40) NOT NULL,
+  `regiao` varchar(40) NOT NULL,
+  `comissao` tinyint(1) NOT NULL,
+  `ingressolions` date NOT NULL,
+  `melvinjones` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
