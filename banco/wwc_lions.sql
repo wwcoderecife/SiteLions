@@ -2,7 +2,7 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
+-- Host: 127.0.0.1 //br-cdbr-azure-south-b.cloudapp.net
 -- Generation Time: 07-Abr-2016 às 03:39
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.5.19
@@ -32,7 +32,7 @@ DROP TABLE IF EXISTS `tb_membros`;
 CREATE TABLE IF NOT EXISTS `tb_membros` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(40) NOT NULL,
-  `nomeconjugue` varchar(40) NOT NULL,
+  `nomeconjugue` varchar(40) DEFAULT NULL,
   `naturalidade` varchar(40) NOT NULL,
   `funcao` varchar(40) NOT NULL,
   `estado` varchar(40) NOT NULL,
@@ -46,6 +46,9 @@ CREATE TABLE IF NOT EXISTS `tb_membros` (
   `comissao` tinyint(1) NOT NULL,
   `ingressolions` date NOT NULL,
   `melvinjones` tinyint(1) NOT NULL,
+  `delegado` tinyint(1) DEFAULT NULL,
+  `delegado_suplente` tinyint(1) DEFAULT NULL,
+  `delegado_nato` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
