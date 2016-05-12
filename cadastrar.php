@@ -17,6 +17,10 @@
     $email = $_POST['email'];
     $endereco = $_POST['endereco'];
     $telefone = $_POST['telefone'];
+    $delegado = $_POST['delegado_suplente'];
+    $delegado_nato = $_POST['delegado_nato'];
+    $delegado_suplente = $_POST['telefone'];
+    
 
     //Pega os valores do formulário de cadastro - Dados Pessoais
     $matricula = $_POST['matricula'];
