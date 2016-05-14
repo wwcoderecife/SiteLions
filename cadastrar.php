@@ -44,7 +44,7 @@
                     endereco, telefone, matricula, nomeclube, regiao, comissao, ingressolions, 
                     melvinjones", "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
                     '$funcao', '$datanascimento', '$email', '$endereco', '$telefone', '$matricula', 
-                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones'"); 
+                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones' ,'$delegado', '$delegado_nato', '$delegado_suplente'"); 
 
     echo "<script type='text/javascript'> alert('Cadastro realizado!');";
     header("Location: index.html"); // redireciona para a listagem
