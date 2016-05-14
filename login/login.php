@@ -40,7 +40,7 @@
     $login = $_POST['login'];  
     $password = $_POST['password'];  
     
-   $consulta = mysql_query("SELECT * FROM tb_usuarios WHERE login = '$login' and senha = $password");
+   $consulta = mysql_query("SELECT * FROM tb_usuarios WHERE login = '$login' and senha = '$password'");
 
    
    if($consulta){
