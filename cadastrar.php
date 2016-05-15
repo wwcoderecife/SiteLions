@@ -42,11 +42,11 @@
         // utiliza a funçao INSERIR da classe crud
     $crud->inserir("nome, nomeconjugue, naturalidade, estado, funcao, datanascimento, email, 
                     endereco, telefone, matricula, nomeclube, regiao, comissao, ingressolions, 
-                    melvinjones", "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
+                    melvinjones, delegado,delegado_suplente,delegado_nato "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
                     '$funcao', '$datanascimento', '$email', '$endereco', '$telefone', '$matricula', 
                     '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones' ,'$delegado', '$delegado_nato', '$delegado_suplente'"); 
 
-    echo "<script type='text/javascript'> alert('Cadastro realizado!');";
+    echo "<script type='text/javascript'> alert('Cadastro realizado com Sucesso!');";
     header("Location: index.html"); // redireciona para a listagem
     }
 ?>
