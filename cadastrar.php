@@ -6,7 +6,7 @@
     
     $con->connect(); // abre conexao com o banco
 
-    //Pega os valores do formulário de cadastro - Dados do Clube
+ //Pega os valores do formulário de cadastro - Dados do Clube
 
     $nome = $_POST['nome'];  
     $nomeconjugue = $_POST['nomeconjugue'];  
@@ -17,10 +17,10 @@
     $email = $_POST['email'];
     $endereco = $_POST['endereco'];
     $telefone = $_POST['telefone'];
-    $delegado = $_POST['delegado'];
+	$delegado = $_POST['delegado'];
+	$delegado_suplente = $_POST['delegado_suplente'];
     $delegado_nato = $_POST['delegado_nato'];
-    $delegado_suplente = $_POST['delegado_suplente'];
-    
+   
 
     //Pega os valores do formulário de cadastro - Dados Pessoais
     $matricula = $_POST['matricula'];
@@ -42,9 +42,11 @@
         // utiliza a funçao INSERIR da classe crud
     $crud->inserir("nome, nomeconjugue, naturalidade, estado, funcao, datanascimento, email, 
                     endereco, telefone, matricula, nomeclube, regiao, comissao, ingressolions, 
-                    melvinjones, delegado,delegado_suplente,delegado_nato "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
+                    melvinjones,delegado,delegado_suplente,delegado_nato", "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
                     '$funcao', '$datanascimento', '$email', '$endereco', '$telefone', '$matricula', 
-                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones' ,'$delegado', '$delegado_nato', '$delegado_suplente'"); 
+                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones','$delegado',
+					'$delegado_suplente','$delegado_nato'"); 
+ 
 
     echo "<script type='text/javascript'> alert('Cadastro realizado com Sucesso!');";
     header("Location: index.html"); // redireciona para a listagem
