@@ -17,9 +17,9 @@
     $email = $_POST['email'];
     $endereco = $_POST['endereco'];
     $telefone = $_POST['telefone'];
-	$delegado = $_POST['delegado'];
-	$delegado_suplente = $_POST['delegado_suplente'];
-    $delegado_nato = $_POST['delegado_nato'];
+	//$delegado = $_POST['delegado'];
+	//$delegado_suplente = $_POST['delegado_suplente'];
+    //$delegado_nato = $_POST['delegado_nato'];
    
 
     //Pega os valores do formulário de cadastro - Dados Pessoais
@@ -39,13 +39,14 @@
         echo "<script type='text/javascript'> alert('Seu cadastro já foi realizado!'); 
             window.location = 'index.html#form'; </script>";
     }else{
-        // utiliza a funçao INSERIR da classe crud
+         // utiliza a funçao INSERIR da classe crud
     $crud->inserir("nome, nomeconjugue, naturalidade, estado, funcao, datanascimento, email, 
                     endereco, telefone, matricula, nomeclube, regiao, comissao, ingressolions, 
-                    melvinjones,delegado,delegado_suplente,delegado_nato", "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
+                    melvinjones", "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
                     '$funcao', '$datanascimento', '$email', '$endereco', '$telefone', '$matricula', 
-                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones','$delegado',
-					'$delegado_suplente','$delegado_nato'"); 
+                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones',
+					"); 
+
  
 
     echo "<script type='text/javascript'> alert('Cadastro realizado com Sucesso!');";
