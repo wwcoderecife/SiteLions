@@ -44,7 +44,7 @@
                     endereco, telefone, matricula, nomeclube, regiao, comissao, ingressolions, 
                     melvinjones", "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
                     '$funcao', '$datanascimento', '$email', '$endereco', '$telefone', '$matricula', 
-                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones',
+                    '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones'
 					"); 
 
  
