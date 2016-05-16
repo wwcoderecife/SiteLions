@@ -42,7 +42,7 @@
          // utiliza a funçao INSERIR da classe crud
     $crud->inserir("nome, nomeconjugue, naturalidade, estado, funcao, datanascimento, email, 
                     endereco, telefone, matricula, nomeclube, regiao, comissao, ingressolions, 
-                    melvinjones", "'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
+                    melvinjones","'$nome', '$nomeconjugue', '$naturalidade', '$estado', 
                     '$funcao', '$datanascimento', '$email', '$endereco', '$telefone', '$matricula', 
                     '$nomeclube', '$regiao', '$comissao', '$ingressolions', '$melvinjones'
 					"); 
