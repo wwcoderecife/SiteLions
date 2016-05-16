@@ -41,14 +41,14 @@ CREATE TABLE IF NOT EXISTS `tb_membros` (
   `email` varchar(40) NOT NULL,
   `telefone` varchar(20) NOT NULL,
   `matricula` varchar(40) NOT NULL,
-  `nomeclube` varchar(40) NOT NULL,
+  `nomeclube` varchar(100) NOT NULL,
   `regiao` varchar(40) NOT NULL,
   `comissao` tinyint(1) NOT NULL,
   `ingressolions` date NOT NULL,
   `melvinjones` tinyint(1) NOT NULL,
   `delegado` tinyint(1) DEFAULT NULL,
   `delegado_suplente` tinyint(1) DEFAULT NULL,
-  `delegado_nato` tinyint(1) NOT NULL,
+  `delegado_nato` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
