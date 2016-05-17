@@ -62,7 +62,7 @@
 						<!--<li><a href="#services">A Convençāo</a></li>-->
 						<!--<li><a href="#team">Comissāo Organizadora</a></li>-->
 						<!--<li><a href="#section-contact">Contato</a></li>-->
-						<li><a href="#restrito">Área administrativa</a></li>	
+						<!--<li><a href="#restrito">Área administrativa</a></li>-->	
         				        <li><a href="#relatorio">Relatórios</a></li>
 					</ul>
 				</div><!--/.navbar-collapse -->
