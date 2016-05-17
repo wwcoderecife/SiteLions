@@ -58,12 +58,12 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
 						<li class="active"><a href="#index">Home</a></li>
-						<li><a href="#section-about">Inscriçāo</a></li>
-						<li><a href="#services">A Convençāo</a></li>
-						<li><a href="#team">Comissāo Organizadora</a></li>
-						<li><a href="#section-contact">Contato</a></li>
+						<!--<li><a href="#section-about">Inscriçāo</a></li>-->
+						<!--<li><a href="#services">A Convençāo</a></li>-->
+						<!--<li><a href="#team">Comissāo Organizadora</a></li>-->
+						<!--<li><a href="#section-contact">Contato</a></li>-->
 						<li><a href="#restrito">Área administrativa</a></li>	
-            <li><a href="#relatorio">Relatórios</a></li>
+        				        <li><a href="#relatorio">Relatórios</a></li>
 					</ul>
 				</div><!--/.navbar-collapse -->
 			</div>
