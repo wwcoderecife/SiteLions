@@ -562,7 +562,7 @@
     </div>
 
     <!-- Relatório Modal 7 / Delegados Natos -->
-    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
+   <!-- <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -573,9 +573,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
+                        <div class="modal-body">-->
                             <!-- Relatório Details Go Here -->
-                            <h2>Delegados Natos</h2>
+                          <!--  <h2>Delegados Natos</h2>
                             <button type='button' onclick='print_specific_div_content(\"print\",\"Membros\")' class='btn btn-default btn-sm' style='float: right'>
                               <span class='glyphicon glyphicon-print'></span> Imprimir
                             </button>
@@ -603,7 +603,32 @@
                 </div>
             </div>
         </div>
+    </div>-->
+        <!-- Relatório Modal 7 / Delegados Natos -->
+     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Relatório Details Go Here -->
+                            <h2>Delegados</h2>
+                            <?php include 'relatorios/delegado.php'; ?>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    
 
     <!-- Relatório Modal 8 / Comitê Credenciais Delegados Natos -->
     <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
