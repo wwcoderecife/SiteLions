@@ -316,29 +316,35 @@
 
 <!-- Multiple Radios -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="comissao">Comissāo</label>
+  <label class="col-md-4 control-label" for="comissao">Qual sua função no evento?</label>
   <div class="col-md-4">
   <div class="radio">
+    <label for="participante">
+      <input type="radio" name="comissao" id="participante" value="1" checked = "checked" >
+      Participante
+    </label>
+	</div>
+  <div class="radio">
     <label for="delegado">
-      <input type="radio" name="comissao" id="delegado" value="1" >
+      <input type="radio" name="comissao" id="delegado" value="2">
       Delegado
     </label>
 	</div>
   <div class="radio">
     <label for="delegado_suplente">
-      <input type="radio" name="comissao" id="delegado_suplente" value="2">
+      <input type="radio" name="comissao" id="delegado_suplente" value="3">
       Delegado Suplente
     </label>
 	</div>
-  <div class="radio">
+	
+	 <div class="radio">
     <label for="delegado_nato">
-      <input type="radio" name="comissao" id="delegado_nato" value="3">
+      <input type="radio" name="comissao" id="delegado_nato" value="4">
       Delegado Nato
     </label>
 	</div>
   </div>
 </div>
-
 
 <!-- Text input-->
 <div class="form-group">
