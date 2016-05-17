@@ -290,7 +290,7 @@
 
 			<div class="row align-center copyright">
 					<div class="col-sm-12"><p>Este projeto foi desenvolvido pelos membros do Women Who Code Recife, sendo este uma das ações do WWcode em desenvolver soluções em TI para organizações sem fins lucrativos<br></br>Equipe: Karina Machado,Simone Amorim, Luciana Carla Castro, Willany Silva, Isabela Isis e Veridiana Melo.
- <p>Gostaria de um projeto para sua organizaçāo? Entre em contao conosco: recife@womenwhocode.com, ou acesse nosso site:</p><br><a href="http://www.womenwhocode.com">Women Who Code Recife</a></br></p></div>
+ <p>Gostaria de um projeto para sua organizaçāo? Entre em contao conosco: recife@womenwhocode.com, ou acesse nosso site:</p><br><a href="http://www.womenwhocode.com" target="_blank">Women Who Code Recife</a></br></p></div>
                     
 			</div>
 		</div>
