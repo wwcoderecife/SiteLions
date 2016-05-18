@@ -30,14 +30,16 @@
     $ingressolions = $_POST['ingressolions'];
     $melvinjones = $_POST['melvinjones'];
 
-    
-if(is_null($datanascimento)){
+// Condição para aceitar campo vazio no tipo date.   
+/*if(is_null($datanascimento)){
     $datanascimento = 'NULL';
 }
+*/
 
-if(is_null($ingressolions)){
+/*if(is_null($ingressolions)){
    $ingressolions = 'NULL';
 }
+*/
 
     // instancia classe com as operaçoes crud, passando o nome da tabela como parametro
     $crud = new crud('tb_membros');  
