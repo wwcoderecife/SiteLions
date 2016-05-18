@@ -32,6 +32,14 @@
 
    
 // Condição para aceitar campo vazio no tipo date. 
+	if($_POST['datanascimento'] == ""){
+		$datanascimento = NULL;
+	}
+
+	if($_POST['ingressolions'] == ""){
+	   $ingressolions = NULL;
+	}
+
 
     // instancia classe com as operaçoes crud, passando o nome da tabela como parametro
     $crud = new crud('tb_membros');  
