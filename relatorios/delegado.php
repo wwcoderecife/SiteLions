@@ -43,8 +43,8 @@
 		<thead>
 	      <tr>
 	        <th>Nome</th>
-	        <th>Funcão</th>
 	        <th>Nome do Clube</th>
+	        <th>Regiao</th>
 	        <th>Comissão</th>
 	      </tr>
 	    </thead>
