@@ -33,16 +33,6 @@
    
 // Condição para aceitar campo vazio no tipo date. 
 
-      	if(empty($datanascimento)){
-		alert('campo data nascimento');
-		$datanascimento = NULL;
-	}
-
-	if(empty($ingressolions)){
-	   alert('campo data nascimento');	
-	   $ingressolions = NULL;
-	}
-	
     // instancia classe com as operaçoes crud, passando o nome da tabela como parametro
     $crud = new crud('tb_membros');  
 
