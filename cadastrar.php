@@ -33,9 +33,7 @@
    
 // Condição para aceitar campo vazio no tipo date. 
 
-        alert($datanascimento);
-
-	if(empty($datanascimento)){
+      	if(empty($datanascimento)){
 		alert('campo data nascimento');
 		$datanascimento = NULL;
 	}
