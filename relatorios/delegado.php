@@ -37,7 +37,7 @@
 	        <td>".$dados["nomeclube"]."</td>
 	        <td>".$dados["regiao"]."</td>
 	        <td>".$dados["comissao"]."</td>
-	        <td></td>
+	        <td>_____________________________________________</td>
 	      </tr>";
 	} 
 	echo "
