@@ -31,12 +31,17 @@
     $melvinjones = $_POST['melvinjones'];
 
    
-// Condição para aceitar campo vazio no tipo date.   
+// Condição para aceitar campo vazio no tipo date. 
+
+        alert($datanascimento);
+
 	if(empty($datanascimento)){
+		alert('campo data nascimento');
 		$datanascimento = NULL;
 	}
 
 	if(empty($ingressolions)){
+	   alert('campo data nascimento');	
 	   $ingressolions = NULL;
 	}
 	
