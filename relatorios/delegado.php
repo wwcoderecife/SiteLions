@@ -79,8 +79,7 @@
 	        <th>Região</th>
 	        <th>Comissão</th>
 	        <th>Assinatura</th>
-	        <td>____________________________</td>
-	      </tr>
+	       </tr>
 	    </thead>
 	    ";
 		// vamos criar a visualização 
@@ -90,6 +89,7 @@
 	        <td>".$dados["nomeclube"]."</td>
 	        <td>".$dados["regiao"]."</td>
 	        <td>".$dados["comissao"]."</td>
+	        <td>____________________________</td>
 	      </tr>";
 	}; 
 
