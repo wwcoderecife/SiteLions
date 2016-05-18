@@ -5,7 +5,7 @@
         $con->connect(); // abre conexao com o banco
 
 	//$delegado= mysql_query("SELECT * FROM tb_membros  where comissao = 2 order by regiao");
-	$delegado= mysql_query("SELECT * FROM tb_membros  case comissao = 2 THEN 'Delegado' order by regiao");
+	$delegado= mysql_query("SELECT * FROM tb_membros  case comissao = 2 THEN 'Delegado' ");
 	$delegadosuplente= mysql_query("SELECT * FROM tb_membros  where comissao = 3 order by regiao");
 	$delegadonato= mysql_query("SELECT * FROM tb_membros  where comissao = 4 order by regiao");
 
