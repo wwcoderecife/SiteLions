@@ -2,10 +2,11 @@
 
 	require_once 'config/conexao.class.php';
 	$con = new conexao(); // instancia classe de conxao
-    $con->connect(); // abre conexao com o banco
+        $con->connect(); // abre conexao com o banco
 
-	$delegado= mysql_query("SELECT * FROM tb_membros  where comissao = 1 order by nome");
-	$delegadonato= mysql_query("SELECT * FROM tb_membros  where comissao = 2 order by nome");
+	$delegado= mysql_query("SELECT * FROM tb_membros  where comissao = 2 order by regiao");
+	$delegadonato= mysql_query("SELECT * FROM tb_membros  where comissao = 4 order by regiao");
+	$delegadosuplente= mysql_query("SELECT * FROM tb_membros  where comissao = 3 order by regiao");
 	
 				
 	echo "
@@ -15,13 +16,13 @@
     <div class='table-responsive' id='printTopIdososJovens'>
 	<table class='table table-condensed table-hover'>
 		<thead>
-	      <th>Delegado</th>
+	   <th>Delegado</th>
 	    </thead>
 		<thead>
 	      <tr>
 	        <th>Nome</th>
-	        <th>Função</th>
 	        <th>Nome do Clube</th>
+	        <th>Regiao</th>
 	        <th>Comissão</th>
 	      </tr>
 	    </thead>
@@ -30,14 +31,14 @@
 	while ($dados = mysql_fetch_array($delegado)) { 
 	 echo "<tr>
 	        <td>".$dados["nome"]."</td>
-	        <td>".$dados["funcao"]."</td>
 	        <td>".$dados["nomeclube"]."</td>
+	        <td>".$dados["regiao"]."</td>
 	        <td>".$dados["comissao"]."</td>
 	      </tr>";
 	} 
 	echo "
 	<thead>
-	      <th>Delegado Nato</th>
+	       <th>Delegado Nato</th>
 	    </thead>
 		<thead>
 	      <tr>
@@ -52,11 +53,36 @@
 	while ($dados = mysql_fetch_array($delegadonato)) { 
 	 echo "<tr>
 	        <td>".$dados["nome"]."</td>
-	        <td>".$dados["funcao"]."</td>
 	        <td>".$dados["nomeclube"]."</td>
+	        <td>".$dados["regiao"]."</td>
 	        <td>".$dados["comissao"]."</td>
 	      </tr>";
 	}; 
+	//Tabela Delegado Suplente
+
+			echo "
+	<thead>
+	      <th>Delegado Suplente</th>
+	    </thead>
+		<thead>
+	      <tr>
+	        <th>Nome</th>
+	        <th>Nome do Clube</th>
+	        <th>Região</th>
+	        <th>Comissão</th>
+	      </tr>
+	    </thead>
+	    ";
+		// vamos criar a visualização 
+	while ($dados = mysql_fetch_array($delegadosuplente)) { 
+	 echo "<tr>
+	        <td>".$dados["nome"]."</td>
+	        <td>".$dados["nomeclube"]."</td>
+	        <td>".$dados["regiao"]."</td>
+	        <td>".$dados["comissao"]."</td>
+	      </tr>";
+	}; 
+
 
 	echo "</tbody>
 			</table>
@@ -66,11 +92,11 @@
 //Criar a tabela para impressão
 echo "<div class='table-responsive' id='print' style='display:none;'>
 	<table class='table table-condensed table-hover'>
-		<thead>
+	<thead>
 	      <tr>
 	        <th>Nome</th>
-	        <th>Função</th>
-	        <th>Nom do Clube</th>
+	        <th>Nome do Clube</th>
+	        <th>Região</th>
 	      </tr>
 	    </thead>
 	    <tbody>";
@@ -78,8 +104,8 @@ echo "<div class='table-responsive' id='print' style='display:none;'>
 	while ($dados = mysql_fetch_array($todos)) { 
 	 echo "<tr>
 	        <td>".$dados["nome"]."</td>
-	        <td>".$dados["funcao"]."</td>
 	        <td>".$dados["nomeclube"]."</td>
+	        <td>".$dados["regiao"]."</td>
 	        <td>".$dados["comissao"]."</td>
 	      </tr>";
 	} 
