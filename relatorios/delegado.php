@@ -26,6 +26,7 @@
 	        <th>Nome do Clube</th>
 	        <th>Regiao</th>
 	        <th>Comissão</th>
+	        <th>Assinatura</th>
 	      </tr>
 	    </thead>
 	    <tbody>";
@@ -36,6 +37,7 @@
 	        <td>".$dados["nomeclube"]."</td>
 	        <td>".$dados["regiao"]."</td>
 	        <td>".$dados["comissao"]."</td>
+	        <td></td>
 	      </tr>";
 	} 
 	echo "
