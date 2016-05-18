@@ -6,8 +6,10 @@
 
 //	$delegado= mysql_query("SELECT * FROM tb_membros  where comissao = 2 order by regiao");
 	$delegado= mysql_query("SELECT CASE WHEN comissao = 2 THEN  'Delegado' end as comissao, nome, nomeclube, regiao  FROM tb_membros  where comissao = 2 order by regiao");
-	$delegadosuplente= mysql_query("SELECT * FROM tb_membros  where comissao = 3 order by regiao");
-	$delegadonato= mysql_query("SELECT * FROM tb_membros  where comissao = 4 order by regiao");
+//	$delegadosuplente= mysql_query("SELECT * FROM tb_membros  where comissao = 3 order by regiao");
+	$delegadosuplente= mysql_query("SELECT CASE WHEN comissao = 2 THEN  'Delegado' end as comissao, nome, nomeclube, regiao  FROM tb_membros  where comissao = 3 order by regiao");
+//	$delegadonato= mysql_query("SELECT * FROM tb_membros  where comissao = 4 order by regiao");
+	$delegadonato= mysql_query("SELECT CASE WHEN comissao = 2 THEN  'Delegado' end as comissao, nome, nomeclube, regiao  FROM tb_membros  where comissao = 4 order by regiao");
 
 	
 				
@@ -37,7 +39,7 @@
 	        <td>".$dados["nomeclube"]."</td>
 	        <td>".$dados["regiao"]."</td>
 	        <td>".$dados["comissao"]."</td>
-	        <td>_____________________________________________</td>
+	        <td>____________________________</td>
 	      </tr>";
 	} 
 	echo "
