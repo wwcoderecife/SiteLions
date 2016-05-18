@@ -209,7 +209,7 @@
 
         <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
 
-         Delegados Natos <!-- Com Nome / Clube / Distrito dos Delegados Natos. Na ordem alfabética. Será documento do Comitê de Credenciais a ser passado para o Comitê de Eleições. -->
+         Delegados / Delegados Natos / Delegados Suplentes <!-- Com Nome / Clube / Distrito dos Delegados Natos. Na ordem alfabética. Será documento do Comitê de Credenciais a ser passado para o Comitê de Eleições. -->
        </a>
       </div>
 
