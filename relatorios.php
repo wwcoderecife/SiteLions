@@ -76,7 +76,7 @@
 
 <section class="featured">
 	<div id="index">
-		<span><?php echo  "Bem Vindo ao Sistema ".$_SESSION['login']; ?></span>
+	
 			<!-- Banner TOP Header-->
     	<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="false">
 			<!--<div class="slides" data-group="slides">
@@ -141,7 +141,7 @@
 				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
 	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
+	<span><?php echo  "Bem Vindo ao Sistema ".$_SESSION['login']; ?></span>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
