@@ -33,12 +33,13 @@
    
 // Condição para aceitar campo vazio no tipo date. 
 	if($_POST['datanascimento'] == ""){
-		$datanascimento = NULL;
+		$datanascimento = '0000-00-00';
 	}
 
 	if($_POST['ingressolions'] == ""){
-	   $ingressolions = NULL;
+	   $ingressolions = '0000-00-00';
 	}
+
 
 
     // instancia classe com as operaçoes crud, passando o nome da tabela como parametro
