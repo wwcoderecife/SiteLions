@@ -77,7 +77,7 @@
 	<div id="index">
 			<!-- Banner TOP Header-->
     	<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="false">
-			<div class="slides" data-group="slides">
+			<!--<div class="slides" data-group="slides">
 				<ul>
 					<li>
 						<div class="slide-body" data-group="slide">
@@ -114,7 +114,7 @@
   	    	</ul>
 		</div>
                		
-    	</div>
+    	</div>-->
       <!-- Responsive slider - END -->
 	</div>
 		</section>
