@@ -76,6 +76,7 @@
 <section class="featured">
 	<div id="index">
 			<!-- Banner TOP Header-->
+<!--
     	<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="false">
 			<div class="slides" data-group="slides">
 				<ul>
@@ -117,6 +118,7 @@
     	</div>
       <!-- Responsive slider - END -->
 	</div>
+	-->
 		</section>
 		
 		<!-- Relatórios -->
