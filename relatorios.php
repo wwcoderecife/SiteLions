@@ -153,7 +153,7 @@
 
         <a  id="cadastrados" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           
-        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+        <a href="#portfolioModal1?pagina=1" class="portfolio-link" data-toggle="modal">
         <div class="portfolio-hover">
           Todos os Inscritos <!--Nome / Clube / Distrito, Em ordem alfabética. -->
         </div>
