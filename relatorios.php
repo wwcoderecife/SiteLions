@@ -141,7 +141,7 @@
 				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
 	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-	<span style="font-size:9px;"><?php echo  "Bem Vindo ao Sistema ".$_SESSION['login']; ?></span>
+	<span style="font-size:11px;"><?php echo  "Bem Vindo ao Sistema ".$_SESSION['login']; ?></span>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
