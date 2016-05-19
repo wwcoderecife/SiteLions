@@ -270,9 +270,9 @@
 		</section>
 
 		<!-- map -->
-		<section id="section-map" class="clearfix">
+		<!--<section id="section-map" class="clearfix">
 			<div id="map"></div>
-		</section>
+		</section>-->
 		
 	<section id="footer" class="section footer">
 		<div class="container">
