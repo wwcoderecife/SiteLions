@@ -79,7 +79,15 @@
 
     	<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="false">
 			<div class="slides" data-group="slides">
+				
 				<ul>
+					<div class="slide-body" data-group="slide">
+							<img src="img/8-3-2.png" alt="">
+							<div class="caption header" data-animate="slideAppearUpToDown" data-delay="500" data-length="300">
+								
+								<div class="caption-sub" data-animate="slideAppearDownToUp" data-delay="1200" data-length="300"><h4><span></span></h4></div>
+								<div class="caption-sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"></div>
+							</div>
 					<li>
 						
 						</div>
