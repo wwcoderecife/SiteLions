@@ -130,7 +130,7 @@
 						<div class="wow bounceIn"data-animation-delay="7.8s">
 						
 							<h2 class="section-heading animated">Relatórios</h2>
-							<h4>Selecione um relatório abaixo</h4>
+							<!--<h4>Selecione um relatório abaixo</h4>-->
 						
 						</div>
 						</div>
