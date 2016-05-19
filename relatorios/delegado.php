@@ -14,10 +14,10 @@
 	
 				
 	echo "
-	<button type='button' onclick='print_specific_div_content(\"printTopIdososJovens\",\"Top Idoso/Jovens\")' class='btn btn-default btn-sm' style='float: right'>
+	<button type='button' onclick='print_specific_div_content(\"printDelegados\",\"Comissaāo/\Delegados")' class='btn btn-default btn-sm' style='float: right'>
       <span class='glyphicon glyphicon-print'></span> Imprimir
     </button>
-    <div class='table-responsive' id='printTopIdososJovens'>
+    <div class='table-responsive' id='printDelegados'>
 	<table class='table table-condensed table-hover'>
 		<thead>
 	   <th>Delegado</th>
