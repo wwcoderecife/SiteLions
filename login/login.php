@@ -44,7 +44,8 @@
 
    
    if($consulta){
-   	 $usuario = mysql_fetch_array($consulta);
+     $usuario = mysql_fetch_array($consulta);
+      $_SESSION['nome'] = $usuario->nome;
      $_SESSION['login'] = $login;
      $_SESSION['senha'] = $senha;
      header('location:../relatorios.php');
