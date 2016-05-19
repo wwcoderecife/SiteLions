@@ -7,8 +7,10 @@
 	$busca = ("SELECT * FROM tb_membros order by nome");
 	$total_reg = "10";
 
-	
 	$pagina = $_GET['pagina'];  
+	if($pagina == NULL){
+	   $pagina = 1;
+	}
 	$pc = $pagina; 
 	
 
