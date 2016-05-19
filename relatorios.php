@@ -153,7 +153,7 @@
 
         <a  id="cadastrados" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           
-        <a href="#portfolioModal1?pagina=1" class="portfolio-link" data-toggle="modal">
+        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
         <div class="portfolio-hover">
           Todos os Inscritos <!--Nome / Clube / Distrito, Em ordem alfabética. -->
         </div>
@@ -372,7 +372,7 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Todos os Inscritos</h2>
-                            <?php include 'relatorios/cadastrados.php'; ?>
+                            <?php include 'relatorios/cadastrados.php?pagina=1'; ?>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
