@@ -372,7 +372,7 @@
                         <div class="modal-body">
                             <!-- Relatório Details Go Here -->
                             <h2>Todos os Inscritos</h2>
-                            <?php include 'relatorios/cadastrados.php?pagina=1'; ?>
+                            <?php include 'relatorios/cadastrados.php'; ?>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
                         </div>
                     </div>
