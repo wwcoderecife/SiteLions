@@ -64,7 +64,7 @@
 						<!--<li><a href="#team">Comissāo Organizadora</a></li>-->
 						<!--<li><a href="#section-contact">Contato</a></li>-->
 						<!--<li><a href="#restrito">Área administrativa</a></li>-->	
-        				        <li><a href="#relatorio">Sair</a></li>
+        				        <li><a href="login/logout.php">Sair</a></li>
 					</ul>
 				</div><!--/.navbar-collapse -->
 			</div>
