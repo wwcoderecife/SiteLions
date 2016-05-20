@@ -155,7 +155,7 @@
 
         <a  id="cadastrados" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           
-        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+        <a href="todos_os_inscritos.php?pagina=1"  target="_blank" class="portfolio-link">
         <div class="portfolio-hover">
           Todos os Inscritos <!--Nome / Clube / Distrito, Em ordem alfabética. -->
         </div>
@@ -359,29 +359,7 @@
      <!-- Relatório Modals -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
 
-    <!-- Relatório Modal 1 / Todos os Inscritos -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Relatório Details Go Here -->
-                            <h2>Todos os Inscritos</h2>
-                            <?php include 'relatorios/cadastrados.php'; ?>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>  Voltar </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
  <!-- Relatório Modal 2 / Inscritos por Distrito x Clube -->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
