@@ -7,11 +7,7 @@ class conexao
         Altere as variaveis a seguir caso necessario
     */
 
-    private $db_host = 'br-cdbr-azure-south-b.cloudapp.net'; // Nome do Host no windows azure// 
-    private $db_user = 'b733f596966f74'; // usuario do banco //
-    private $db_pass = '52119121'; // senha do usuario do banco // 
-    private $db_name = 'wwc_lions'; // nome do banco
-    private $db_port = '3306'; // nome da porta
+    
 
     private $con = false;
 
